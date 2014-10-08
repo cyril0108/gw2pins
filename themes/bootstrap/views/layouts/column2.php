@@ -1,10 +1,24 @@
 <?php /* @var $this Controller */
-
+$baseUrl = Yii::app()->baseUrl;
 $cs = Yii::app()->getClientScript();
 $cs->registerScript('login',"
     $('#buttonLogin').click(function() {
         var btn = $(this);
         btn.button('loading'); // call the loading function
+//        $.ajax({
+//            url:'{$baseUrl}/site/login',
+//            dataType:'json',
+//            data:{ajax:'login-form',username:'admin',password:'admin'},
+//            success: function() {
+//                alert('test');
+//            },
+//            error: function(error) {
+//                alert(error);
+//            },
+//            complete: function() {
+//                alert('complete');
+//            }
+//        });
         setTimeout(function() {
             btn.button('reset'); // call the reset function
         }, 3000);
@@ -53,7 +67,8 @@ $cs->registerScript('login',"
             if(Yii::app()->user->isGuest) {
             $loginForm = new LoginForm;
             $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-                'id'=>'verticalForm',
+                'id'=>'login-form',
+                'type'=>'vertical',
                 'htmlOptions'=>array('class'=>'well'),
             )); ?>
 
