@@ -1550,3 +1550,71 @@ Stack trace:
 REQUEST_URI=/gw2pins/index.php/site/login
 in D:\PortableAPM\www\gw2pins\protected\controllers\SiteController.php (87)
 in D:\PortableAPM\www\gw2pins\index.php (14)
+2014/10/09 02:15:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gw2wiki-zh".' in D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('gw2wiki-zh')
+#1 D:\PortableAPM\www\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\PortableAPM\www\gw2pins\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/gw2pins/index.php/gw2wiki-zh
+HTTP_REFERER=http://localhost:82/gw2pins/index.php/site/index
+---
+2014/10/09 02:16:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gw2wiki-zh".' in D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('gw2wiki-zh')
+#1 D:\PortableAPM\www\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\PortableAPM\www\gw2pins\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/gw2pins/index.php/gw2wiki-zh
+HTTP_REFERER=http://localhost:82/gw2pins/index.php/site/index
+---
+2014/10/09 02:16:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gw2wiki-zh".' in D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('gw2wiki-zh')
+#1 D:\PortableAPM\www\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\PortableAPM\www\gw2pins\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/gw2pins/index.php/gw2wiki-zh
+HTTP_REFERER=http://localhost:82/gw2pins/index.php/site/index
+---
+2014/10/09 02:16:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gw2wiki-zh".' in D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('gw2wiki-zh')
+#1 D:\PortableAPM\www\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\PortableAPM\www\gw2pins\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/gw2pins/index.php/gw2wiki-zh
+HTTP_REFERER=http://localhost:82/gw2pins/index.php/gw2wiki-zh
+---
+2014/10/09 02:16:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gw2wiki-zh".' in D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('gw2wiki-zh')
+#1 D:\PortableAPM\www\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\PortableAPM\www\gw2pins\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/gw2pins/gw2wiki-zh
+---
+2014/10/09 02:17:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gw2wiki-zh".' in D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('gw2wiki-zh')
+#1 D:\PortableAPM\www\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\PortableAPM\www\gw2pins\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/gw2pins/gw2wiki-zh
+---
+2014/10/09 02:17:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gw2wiki-zh".' in D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('gw2wiki-zh')
+#1 D:\PortableAPM\www\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\PortableAPM\www\gw2pins\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/gw2pins/gw2wiki-zh
+---
+2014/10/09 02:19:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gw2wiki-zh".' in D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\PortableAPM\www\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('gw2wiki-zh')
+#1 D:\PortableAPM\www\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\PortableAPM\www\gw2pins\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/gw2pins/gw2wiki-zh
+---
