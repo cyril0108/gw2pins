@@ -1,29 +1,6 @@
 <?php /* @var $this Controller */
 $baseUrl = Yii::app()->baseUrl;
 $cs = Yii::app()->getClientScript();
-$cs->registerScript('login',"
-    $('#buttonLogin').click(function() {
-        var btn = $(this);
-        btn.button('loading'); // call the loading function
-//        $.ajax({
-//            url:'{$baseUrl}/site/login',
-//            dataType:'json',
-//            data:{ajax:'login-form',username:'admin',password:'admin'},
-//            success: function() {
-//                alert('test');
-//            },
-//            error: function(error) {
-//                alert(error);
-//            },
-//            complete: function() {
-//                alert('complete');
-//            }
-//        });
-        setTimeout(function() {
-            btn.button('reset'); // call the reset function
-        }, 3000);
-    });
-", CClientScript::POS_END);
 ?>
 <?php $this->beginContent('//layouts/main'); ?>
 <div class="row">
@@ -63,13 +40,53 @@ $cs->registerScript('login',"
         ?>
         </div><!-- sidebar -->
         <div class="row">
+            <!-- Sidebar TODO -->
             <?php /** @var BootActiveForm $form */
+            $loginForm=new LoginForm;
             if(Yii::app()->user->isGuest) {
-            $loginForm = new LoginForm;
             $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
                 'id'=>'login-form',
                 'type'=>'vertical',
                 'htmlOptions'=>array('class'=>'well'),
+                'enableClientValidation' => true,
+                'clientOptions' => array(
+                    'validateOnSubmit' => true,
+                    'afterValidate' => 'js:function(form, data, hasError) {
+                        if (!hasError){
+                            str = $("#login-form").serialize() + "&ajax=login-form";
+
+                            $.ajax({
+                                type: "POST",
+                                url: "' . Yii::app()->createUrl('site/login') . '",
+                                data: str,
+                                dataType: "json",
+                                beforeSend : function() {
+                                    $("#buttonLogin").attr("disabled",true);
+                                },
+                                success: function(data, status) {
+                                    if(data.authenticated)
+                                    {
+                                        window.location = data.redirectUrl;
+                                    }
+                                    else
+                                    {
+                                        $.each(data, function(key, value) {
+                                            var div = "#"+key+"_em_";
+                                            $(div).text(value);
+                                            $(div).show();
+                                        });
+                                        $("#buttonLogin").attr("disabled",false);
+                                    }
+                                },
+                                error: function(data, status) {
+                                    alert(data.error);
+                                    $("#buttonLogin").attr("disabled",false);
+                                },
+                            });
+                            return false;
+                        }
+                    }',
+                ),
             )); ?>
 
             <?php echo $form->textFieldRow($loginForm, 'username', array('class'=>'span3')); ?>

@@ -14,34 +14,60 @@ $this->breadcrumbs=array(
 <p>Please fill out the following form with your login credentials:</p>
 
 <div class="form">
+        <?php /** @var BootActiveForm $form */
+        //            $loginForm=new LoginForm;
+        if(Yii::app()->user->isGuest) {
+        $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+            'id'=>'login-form',
+            'type'=>'vertical',
+            'htmlOptions'=>array('class'=>'well'),
+            'enableClientValidation' => true,
+            'clientOptions' => array(
+                'validateOnSubmit' => true,
+                'afterValidate' => 'js:function(form, data, hasError) {
+                    if (!hasError){
+                        str = $("#login-form").serialize() + "&ajax=login-form";
 
-<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-	'id'=>'login-form',
-    'type'=>'horizontal',
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-)); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->textFieldRow($model,'username'); ?>
-
-	<?php echo $form->passwordFieldRow($model,'password',array(
-        'hint'=>'Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>',
-    )); ?>
-
-	<?php echo $form->checkBoxRow($model,'rememberMe'); ?>
-
-	<div class="form-actions">
-		<?php $this->widget('bootstrap.widgets.TbButton', array(
-            'buttonType'=>'submit',
-            'type'=>'primary',
-            'label'=>'Login',
+                        $.ajax({
+                            type: "POST",
+                            url: "' . Yii::app()->createUrl('site/login') . '",
+                            data: str,
+                            dataType: "json",
+                            beforeSend : function() {
+                                $("#buttonLogin").attr("disabled",true);
+                            },
+                            success: function(data, status) {
+                                if(data.authenticated)
+                                {
+                                    window.location = data.redirectUrl;
+                                }
+                                else
+                                {
+                                    $.each(data, function(key, value) {
+                                        var div = "#"+key+"_em_";
+                                        $(div).text(value);
+                                        $(div).show();
+                                    });
+                                    $("#buttonLogin").attr("disabled",false);
+                                }
+                            },
+                            error: function(data, status) {
+                                alert(data.error);
+                                $("#buttonLogin").attr("disabled",false);
+                            },
+                        });
+                        return false;
+                    }
+                }',
+            ),
         )); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-
+        <?php echo $form->textFieldRow($model, 'username', array('class'=>'span3')); ?>
+        <?php echo $form->passwordFieldRow($model, 'password', array('class'=>'span3')); ?>
+        <?php echo $form->checkboxRow($model, 'rememberMe'); ?>
+        <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit',
+            'type'=>'primary',
+            'loadingText'=>'loading...',
+            'label'=>'登入',
+            'htmlOptions'=>array('id'=>'buttonLogin'))); ?>
+        <?php $this->endWidget(); }?>
 </div><!-- form -->
