@@ -98,7 +98,19 @@ $cs = Yii::app()->getClientScript();
                 'label'=>'登入',
                 'htmlOptions'=>array('id'=>'buttonLogin'))); ?>
 
-            <?php $this->endWidget(); }?>
+            <?php $this->endWidget(); } else {?>
+            <div class="well form-vertical">
+                Hello, <?php echo Yii::app()->user->name;?>
+                <div>
+                    <?php $this->widget('bootstrap.widgets.TbButton', array(
+                        'url'=>array('/site/logout'),
+                        'label'=>'登出',
+                        'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
+                        'size'=>'small', // null, 'large', 'small' or 'mini'
+                    )); ?>
+                </div>
+            </div>
+            <?php }?>
         </div>
     </div>
 </div>
