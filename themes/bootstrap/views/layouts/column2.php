@@ -10,7 +10,7 @@ $cs = Yii::app()->getClientScript();
             'htmlOptions'=>array('class'=>'index-hero-unit'),
         )); ?>
 
-        <p>Congratulations! You have successfully created your Yii application.</p>
+        <p><?php echo CHtml::encode("Phenix With Nine Tails.");?></p>
 
         <?php $this->endWidget(); ?>
         <?php if(isset($this->breadcrumbs)):?>
@@ -22,7 +22,7 @@ $cs = Yii::app()->getClientScript();
 </div>
 <div class="row">
     <div class="span9">       
-        <div id="content">
+        <div id="content" style="width: 98%;">
             <?php echo $content; ?>
         </div><!-- content -->
     </div>

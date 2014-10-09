@@ -2,6 +2,7 @@
     padding-top: 60px;
 }
 
-.index-hero-unit{;
+.index-hero-unit {
+    height: 180px;
     background-image: url('http://localhost:82/gw2pins/images/FeaturedImage-guild-wars-2.jpg') !important;
- }
+}

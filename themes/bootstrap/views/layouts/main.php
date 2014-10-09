@@ -37,7 +37,7 @@
 
 	<div class="clear"></div>
 
-        <div id="footer" class="text-center">
+        <div id="footer" class="text-center" style="margin: 100px 0 10px 0;">
 		Copyright &copy; <?php echo date('Y'); ?> by Phenix With Nine Tails, PiNs. All Rights Reserved.
 	</div><!-- footer -->
 
