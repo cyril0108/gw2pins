@@ -38,7 +38,7 @@ $this->breadcrumbs=array(
 </section>
 <section>
     <h3>關於 PiNs.</h3>
-    <p><h5><font class="text-error">P</font>henix W<font class="text-error">i</font>th <font class="text-error">N</font>ine Tail<font class="text-error">s</font>, PiNs.</h5>
+    <p><strong class="text-error">P</strong>henix W<strong class="text-error">i</strong>th <strong class="text-error">N</strong>ine Tail<strong class="text-error">s</strong>, PiNs.
         <?php echo CHtml::encode("九尾鳳凰，鳳凰是浴火重生的神獸，"
             . "我們希望藉由鳳凰象徵玩家們能在 GW2 這款說老不老說年輕也不年輕的遊戲中，"
             . "重新燃起對遊戲的熱情與感動；至於為什麼是九條尾巴，就要請大家自己去研究一下火影忍者了（笑 www）。");?></p>

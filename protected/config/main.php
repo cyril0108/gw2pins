@@ -61,6 +61,7 @@ return array(
 			'username' => 'root',
 			'password' => 'c710108',
 			'charset' => 'utf8',
+                        'tablePrefix' => 'pins_',
 		),
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors

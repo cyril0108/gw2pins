@@ -22,6 +22,7 @@
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(
                 array('label'=>'Home', 'url'=>array('/site/index')),
+                array('label'=>'Register', 'url'=>array('/user/create')),
                 array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
                 array('label'=>'Contact', 'url'=>array('/site/contact')),
                 array('label'=>'Wiki', 'url'=>'/gw2wiki-zh/index.php'),
@@ -37,8 +38,8 @@
 
 	<div class="clear"></div>
 
-        <div id="footer" class="text-center" style="margin: 100px 0 10px 0;">
-		Copyright &copy; <?php echo date('Y'); ?> by Phenix With Nine Tails, PiNs. All Rights Reserved.
+        <div id="footer" class="text-center bg-footer">
+            <strong>Copyright &copy; <?php echo date('Y'); ?> by Phenix With Nine Tails, PiNs. All Rights Reserved.</strong>
 	</div><!-- footer -->
 
 </div><!-- page -->

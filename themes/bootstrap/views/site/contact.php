@@ -27,10 +27,10 @@ If you have business inquiries or other questions, please fill out the following
 
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'contact-form',
-    'type'=>'horizontal',
+        'type'=>'horizontal',
 	'enableClientValidation'=>true,
 	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
+            'validateOnSubmit'=>true,
 	),
 )); ?>
 
@@ -38,13 +38,13 @@ If you have business inquiries or other questions, please fill out the following
 
 	<?php echo $form->errorSummary($model); ?>
 
-    <?php echo $form->textFieldRow($model,'name'); ?>
+        <?php echo $form->textFieldRow($model,'name'); ?>
 
-    <?php echo $form->textFieldRow($model,'email'); ?>
+        <?php echo $form->textFieldRow($model,'email'); ?>
 
-    <?php echo $form->textFieldRow($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
+        <?php echo $form->textFieldRow($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
 
-    <?php echo $form->textAreaRow($model,'body',array('rows'=>6, 'class'=>'span8')); ?>
+        <?php echo $form->textAreaRow($model,'body',array('rows'=>6, 'class'=>'span5')); ?>
 
 	<?php if(CCaptcha::checkRequirements()): ?>
 		<?php echo $form->captchaRow($model,'verifyCode',array(
