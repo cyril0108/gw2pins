@@ -51,8 +51,7 @@ $this->breadcrumbs=array(
                                     $("#buttonLogin").attr("disabled",false);
                                 }
                             },
-                            error: function(data, status) {
-                                alert(data.error);
+                            error: function(xhr, ajaxOptions, thrownError) {
                                 $("#buttonLogin").attr("disabled",false);
                             },
                         });

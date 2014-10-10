@@ -78,8 +78,7 @@ $cs = Yii::app()->getClientScript();
                                         $("#buttonLogin").attr("disabled",false);
                                     }
                                 },
-                                error: function(data, status) {
-                                    alert(data.error);
+                                error: function() {
                                     $("#buttonLogin").attr("disabled",false);
                                 },
                             });
