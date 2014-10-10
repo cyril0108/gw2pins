@@ -19,7 +19,7 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'row_id',
-		'account',
+		'account_id',
 		'level',
 		'title',
 		'status',

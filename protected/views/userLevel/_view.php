@@ -4,8 +4,8 @@
 	<?php echo CHtml::link(CHtml::encode($data->row_id),array('view','id'=>$data->row_id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('account')); ?>:</b>
-	<?php echo CHtml::encode($data->account); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('account_id')); ?>:</b>
+	<?php echo CHtml::encode($data->account_id); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('level')); ?>:</b>

@@ -5,6 +5,8 @@
 .index-hero-unit {
     height: 180px;
     background-image: url('../../../images/FeaturedImage-guild-wars-2.jpg') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .thank-you {

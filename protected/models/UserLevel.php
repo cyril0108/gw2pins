@@ -30,13 +30,13 @@ class UserLevel extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('account, level, title, status', 'required'),
-			array('level, status', 'numerical', 'integerOnly'=>true),
-			array('account, modify', 'length', 'max'=>15),
+			array('account_id, level, title, status', 'required'),
+			array('account_id, level, status', 'numerical', 'integerOnly'=>true),
+			array('modify', 'length', 'max'=>15),
 			array('modify_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('row_id, account, level, title, status, modify, modify_date', 'safe', 'on'=>'search'),
+			array('row_id, account_id, level, title, status, modify, modify_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,7 +59,7 @@ class UserLevel extends CActiveRecord
 	{
 		return array(
 			'row_id' => 'Row',
-			'account' => 'Account',
+			'account_id' => 'Account Id',
 			'level' => 'Level',
 			'title' => 'Title',
 			'status' => 'Status',
@@ -87,7 +87,7 @@ class UserLevel extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('row_id',$this->row_id);
-		$criteria->compare('account',$this->account,true);
+		$criteria->compare('account_id',$this->account_id,true);
 		$criteria->compare('level',$this->level);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('status',$this->status);

@@ -31,12 +31,12 @@ class UserController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update'),
+				'actions'=>array('index','view','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','view','admin','delete'),
-				'users'=>array('admin'),
+				'actions'=>array('admin','delete'),
+				'users'=>$this->webmaster,
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -70,6 +70,7 @@ class UserController extends Controller
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
+                        $model->account = strtolower($_POST['User']['account']);
 			if($model->save()) {
                                 $model->password = md5($_POST['User']['password']);
                                 $model->update();

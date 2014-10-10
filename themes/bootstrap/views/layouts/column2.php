@@ -6,7 +6,7 @@ $cs = Yii::app()->getClientScript();
 <div class="row">
     <div class="span12">
         <?php $this->beginWidget('bootstrap.widgets.TbHeroUnit',array(
-            'heading'=>'Welcome to '.CHtml::encode(Yii::app()->name),
+            'heading'=>'Welcome to PiNs',
             'htmlOptions'=>array('class'=>'index-hero-unit'),
         )); ?>
 

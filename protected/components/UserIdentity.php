@@ -17,6 +17,7 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
+                $this->username = strtolower($this->username);
                 $connection=Yii::app()->db;
                 $sql = "SELECT account,password FROM pins_user WHERE account = '".$this->username."'";
                 $command = $connection->createCommand($sql);
