@@ -15,8 +15,6 @@ $this->breadcrumbs=array(
 
 <div class="form">
         <?php /** @var BootActiveForm $form */
-        //            $loginForm=new LoginForm;
-        if(Yii::app()->user->isGuest) {
         $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
             'id'=>'login-form',
             'type'=>'vertical',
@@ -68,5 +66,5 @@ $this->breadcrumbs=array(
             'loadingText'=>'loading...',
             'label'=>'登入',
             'htmlOptions'=>array('id'=>'buttonLogin'))); ?>
-        <?php $this->endWidget(); }?>
+        <?php $this->endWidget();?>
 </div><!-- form -->

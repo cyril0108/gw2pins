@@ -29,14 +29,16 @@ $cs = Yii::app()->getClientScript();
     <div class="span3">
         <div id="sidebar">
         <?php
-            $this->beginWidget('zii.widgets.CPortlet', array(
-                'title'=>'Operations',
-            ));
-            $this->widget('bootstrap.widgets.TbMenu', array(
-                'items'=>$this->menu,
-                'htmlOptions'=>array('class'=>'operations'),
-            ));
-            $this->endWidget();
+            if(!Yii::app()->user->isGuest && in_array(Yii::app()->user->name, $this->webmaster)) {
+                $this->beginWidget('zii.widgets.CPortlet', array(
+                    'title'=>'Operations',
+                ));
+                $this->widget('bootstrap.widgets.TbMenu', array(
+                    'items'=>$this->menu,
+                    'htmlOptions'=>array('class'=>'operations'),
+                ));
+                $this->endWidget();
+            }
         ?>
         </div><!-- sidebar -->
         <div class="row">
@@ -98,14 +100,32 @@ $cs = Yii::app()->getClientScript();
                 'htmlOptions'=>array('id'=>'buttonLogin'))); ?>
 
             <?php $this->endWidget(); } else {?>
-            <div class="well form-vertical">
-                Hello, <?php echo Yii::app()->user->name;?>
-                <div>
+            <div class="well">
+                <p>Hello, <?php echo Yii::app()->user->name;?></p>
+                <div class="row-fluid">
+                    <div class="btn-toolbar">
+                        <?php $this->widget('bootstrap.widgets.TbButtonGroup', array(
+                            'type'=>'primary', // '', 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
+                            'buttons'=>array(
+                                array(
+                                    'label'=>'功能選單', 
+                                    'items'=>array(
+                                        array('label'=>'個人資料', 'url'=>array('user/index'), 'icon'=>'icon-user'),
+                                        array('label'=>'更新資料', 'url'=>array('user/update'), 'icon'=>'icon-pencil'),
+                                        '---',
+                                        array('label'=>'未開放', 'url'=>'#'),),
+                                    'icon'=>'icon-cog icon-white'
+                                ),
+                            ),
+                            'htmlOptions'=>array('class'=>'span6'),
+                        )); ?>
+                    </div>
                     <?php $this->widget('bootstrap.widgets.TbButton', array(
                         'url'=>array('/site/logout'),
                         'label'=>'登出',
                         'type'=>'primary', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
                         'size'=>'small', // null, 'large', 'small' or 'mini'
+                        'htmlOptions'=>array('class'=>'span3'),
                     )); ?>
                 </div>
             </div>

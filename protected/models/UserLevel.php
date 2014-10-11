@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table '{{user_level}}':
  * @property integer $row_id
- * @property string $account
+ * @property integer $account_id
  * @property integer $level
  * @property string $title
  * @property integer $status
@@ -32,6 +32,7 @@ class UserLevel extends CActiveRecord
 		return array(
 			array('account_id, level, title, status', 'required'),
 			array('account_id, level, status', 'numerical', 'integerOnly'=>true),
+			array('title', 'length', 'max'=>60),
 			array('modify', 'length', 'max'=>15),
 			array('modify_date', 'safe'),
 			// The following rule is used by search().
@@ -59,7 +60,7 @@ class UserLevel extends CActiveRecord
 	{
 		return array(
 			'row_id' => 'Row',
-			'account_id' => 'Account Id',
+			'account_id' => 'Account',
 			'level' => 'Level',
 			'title' => 'Title',
 			'status' => 'Status',
@@ -87,7 +88,7 @@ class UserLevel extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('row_id',$this->row_id);
-		$criteria->compare('account_id',$this->account_id,true);
+		$criteria->compare('account_id',$this->account_id);
 		$criteria->compare('level',$this->level);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('status',$this->status);

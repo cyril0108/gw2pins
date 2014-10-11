@@ -11,7 +11,7 @@
 
 	<?php echo $form->textFieldRow($model,'level',array('class'=>'span5')); ?>
 
-	<?php echo $form->textAreaRow($model,'title',array('rows'=>6, 'cols'=>50, 'class'=>'span5')); ?>
+	<?php echo $form->textFieldRow($model,'title',array('class'=>'span5','maxlength'=>60)); ?>
 
 	<?php echo $form->textFieldRow($model,'status',array('class'=>'span5')); ?>
 

@@ -96,18 +96,33 @@ class UserController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
+	public function actionUpdate($id=NULL)
 	{
-		$model=$this->loadModel($id);
-
+                if(in_array(Yii::app()->user->name, $this->webmaster)) {
+                    if($id!==NULL) {
+                        $model=$this->loadModel($id);
+                    } else {
+                        $model = User::model()->findByAttributes(array('account'=>Yii::app()->user->name));
+                    }
+                } else {
+                    $model = User::model()->findByAttributes(array('account'=>Yii::app()->user->name));
+                }
+                $orginal_password = $model->password;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
+                        if($orginal_password!==$_POST['User']['password']) {
+                            $model->password = md5($_POST['User']['password']);
+                            $model->repeatpassword = md5($_POST['User']['repeatpassword']);
+                        } else {
+                            $model->repeatpassword = $_POST['User']['password'];
+                        }
+
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->row_id));
+				$this->redirect(array('index'));
 		}
 
 		$this->render('update',array(
@@ -140,9 +155,9 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('User');
+		$userModel = User::model()->findByAttributes(array('account'=>Yii::app()->user->name));
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'userModel'=>$userModel,
 		));
 	}
 

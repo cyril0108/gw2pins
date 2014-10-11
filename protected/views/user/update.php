@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update User <?php echo $model->row_id; ?></h1>
+<h1>更新資料 <?php echo $model->account; ?></h1>
 
-<?php echo $this->renderPartial('_form',array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form_update',array('model'=>$model)); ?>

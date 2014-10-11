@@ -38,7 +38,7 @@ class User extends CActiveRecord
                         array('account, game_id', 'length', 'max'=>15),
 			array('first_name, last_name, nickname', 'length', 'max'=>60),
 			array('email, password', 'length', 'max'=>1024),
-                        array('repeatpassword', 'compare', 'compareAttribute'=>'password', 'message'=>"密碼不符合", 'on'=>'create'),
+                        array('repeatpassword', 'compare', 'compareAttribute'=>'password', 'message'=>"密碼不符合", 'on'=>'create,update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('row_id, account, first_name, last_name, nickname, email, intro, password, created_date', 'safe', 'on'=>'search'),

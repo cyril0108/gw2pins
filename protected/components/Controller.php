@@ -22,4 +22,10 @@ class Controller extends CController
 	public $breadcrumbs=array();
         
         public $webmaster=array('cyril');
+        public $pins_status=array(
+            '1'=>'申請中',
+            '2'=>'額滿',
+            '3'=>'遞補中',
+            '4'=>'完成入會',
+        );
 }

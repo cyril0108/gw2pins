@@ -4,9 +4,11 @@
 
 .index-hero-unit {
     height: 180px;
-    background-image: url('../../../images/FeaturedImage-guild-wars-2.jpg') !important;
-    background-size: cover;
+    background-color: #ffffff !important;
+    background: url('../../../images/FeaturedImage-guild-wars-2.jpg') right top;
+    /*background-size: cover;*/
     background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
 }
 
 .thank-you {
@@ -33,4 +35,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+.img-guild {
+    height: 140px;
+    width: 140px;
 }
