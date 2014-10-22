@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'User Levels'=>array('index'),
-	$model->title=>array('view','id'=>$model->row_id),
+	'申請會員資料'=>array('index'),
+	$model->user->nickname=>array('view','id'=>$model->row_id),
 	'Update',
 );
 
@@ -15,4 +15,4 @@ $this->menu=array(
 
 <h1>Update UserLevel <?php echo $model->row_id; ?></h1>
 
-<?php echo $this->renderPartial('_form',array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form_update',array('model'=>$model)); ?>

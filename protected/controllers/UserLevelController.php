@@ -26,15 +26,11 @@ class UserLevelController extends Controller
 	public function accessRules()
 	{
 		return array(
-//			array('allow',  // allow all users to perform 'index' and 'view' actions
-//				'actions'=>array(),
-//				'users'=>array('*'),
-//			),
-//			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-//				'actions'=>array(),
-//				'users'=>array('@'),
-//			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('index','view','update'),
+				'users'=>$this->webmanager,
+			),
+                        array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('index','view','create','update','admin','delete'),
 				'users'=>$this->webmaster,
 			),
@@ -85,6 +81,7 @@ class UserLevelController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+                $operator = User::model()->findByAttributes(array('account'=>Yii::app()->user->name));
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -93,6 +90,11 @@ class UserLevelController extends Controller
 		if(isset($_POST['UserLevel']))
 		{
 			$model->attributes=$_POST['UserLevel'];
+                        if($_POST['UserLevel']['status']==='4' && !in_array($model->user->account, $this->webmanager)) {
+                            $model->setAttribute('title', 'PiNs會員');
+                        }
+                        $model->modify = $operator->nickname;
+                        $model->modify_date = date('Y-m-d H:i:s');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->row_id));
 		}

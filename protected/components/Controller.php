@@ -22,6 +22,7 @@ class Controller extends CController
 	public $breadcrumbs=array();
         
         public $webmaster=array('cyril');
+        public $webmanager=array('cyril','pins','喵寶','pandia');
         public $pins_status=array(
             '1'=>'申請中',
             '2'=>'額滿',

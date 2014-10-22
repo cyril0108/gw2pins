@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'User Levels'=>array('index'),
-	$model->title,
+	'申請會員資料'=>array('index'),
+	$model->user->nickname,
 );
 
 $this->menu=array(
@@ -13,16 +13,14 @@ $this->menu=array(
 );
 ?>
 
-<h1>View UserLevel #<?php echo $model->row_id; ?></h1>
+<h1>View UserLevel #<?php echo $model->user->nickname; ?></h1>
 
 <?php $this->widget('bootstrap.widgets.TbDetailView',array(
 	'data'=>$model,
 	'attributes'=>array(
-		'row_id',
-		'account_id',
 		'level',
 		'title',
-		'status',
+		array('name'=>'申請狀態','type'=>'html','value'=>function ($data){return $this->pins_status[$data->status];}),
 		'modify',
 		'modify_date',
 	),
