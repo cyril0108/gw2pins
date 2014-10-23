@@ -22,10 +22,10 @@
         array(
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(
-                array('label'=>'Home', 'url'=>array('/site/index')),
-                array('label'=>'Register', 'url'=>array('/user/create')),
-                array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-                array('label'=>'Contact', 'url'=>array('/site/contact')),
+                array('label'=>'首頁', 'url'=>array('/site/index')),
+                array('label'=>'申請', 'url'=>array('/user/create')),
+                array('label'=>'關於PiNs', 'url'=>array('/site/page', 'view'=>'about')),
+                array('label'=>'連絡', 'url'=>array('/site/contact')),
                 array('label'=>'Wiki', 'url'=>'/gw2wiki-zh/index.php'),
             ),
         ),
@@ -34,7 +34,7 @@
             'htmlOptions'=>array('class'=>'pull-right'),
             'items'=>array(
                 array('label'=>'PiNs申請管理', 'url'=>array('userLevel/index'), 'visible'=>in_array(Yii::app()->user->name, $this->webmanager)),
-                array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+                array('label'=>'登出 ('.Yii::app()->user->name.')', 'url'=>array('site/logout'), 'visible'=>!Yii::app()->user->isGuest)
             ),
         ),
     ),
