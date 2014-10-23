@@ -1,7 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Users'=>array('index'),
-	$model->row_id,
+	$model->nickname,
 );
 
 $this->menu=array(

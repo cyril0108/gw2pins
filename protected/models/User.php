@@ -53,7 +53,8 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'user_level'=>array(self::HAS_ONE, 'UserLevel', 'account_id')
+                    'user_level'=>array(self::HAS_ONE, 'UserLevel', 'account_id'),
+                    'post'=>array(self::HAS_MANY, 'Post', 'user_id')
 		);
 	}
 

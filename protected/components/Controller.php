@@ -29,4 +29,6 @@ class Controller extends CController
             '3'=>'遞補中',
             '4'=>'完成入會',
         );
+        public $post_category=array('教學','公會消息',);
+        public $post_show=array('關閉','顯示');
 }

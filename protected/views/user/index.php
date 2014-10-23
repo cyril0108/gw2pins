@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Users',
+	'個人資料',
 );
 
 $this->menu=array(
@@ -11,7 +11,7 @@ $this->menu=array(
 <section>
     <ul class="inline">
         <li>
-            <img src="../../images/400_F_40438872_0pimz7ARslxU7XM3VmFmxawbLPqUPJdF.jpg" class="img-polaroid img-guild">
+            <img src="<?php echo Yii::app()->baseUrl.'/images/400_F_40438872_0pimz7ARslxU7XM3VmFmxawbLPqUPJdF.jpg';?>" class="img-polaroid img-guild">
         </li>
         <li>
             <h1><?php echo $userModel->nickname;?></h1>
