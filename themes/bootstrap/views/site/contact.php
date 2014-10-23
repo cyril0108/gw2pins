@@ -20,7 +20,7 @@ $this->breadcrumbs=array(
 <?php else: ?>
 
 <p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+如果您有任何問題，請填寫下面表單連絡我們. 感謝您.
 </p>
 
 <div class="form">
@@ -34,7 +34,7 @@ If you have business inquiries or other questions, please fill out the following
 	),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">星號 <span class="required">*</span> 為必填.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -48,7 +48,7 @@ If you have business inquiries or other questions, please fill out the following
 
 	<?php if(CCaptcha::checkRequirements()): ?>
 		<?php echo $form->captchaRow($model,'verifyCode',array(
-            'hint'=>'Please enter the letters as they are shown in the image above.<br/>Letters are not case-sensitive.',
+            'hint'=>'請輸入驗證碼.<br/>字母不分大小寫.',
         )); ?>
 	<?php endif; ?>
 
@@ -56,7 +56,7 @@ If you have business inquiries or other questions, please fill out the following
 		<?php $this->widget('bootstrap.widgets.TbButton',array(
             'buttonType'=>'submit',
             'type'=>'primary',
-            'label'=>'Submit',
+            'label'=>'送出',
         )); ?>
 	</div>
 
