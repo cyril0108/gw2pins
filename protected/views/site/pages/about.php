@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 ?>
 <section>
     <h3>PiNs 公會簡介.</h3>
-    <p><?php echo CHtml::encode('Phenix With Nine Tails, PiNs，是一個存在泰瑞亞大陸的新興工會。'
+    <p><?php echo CHtml::encode('Phenix With Nine Tails, PiNs，是一個存在泰瑞亞大陸的新興工會（北美 Jade Quarry 伺服器）。'
             . '由幾個對 GW2 這款遊戲有熱情的玩家成立，並共同捐款研發遊戲中工會裡必要的一些基礎的設施，'
             . 'PiNs 成立的最大願望，就是可以跟我們同樣喜愛 GW2 這款遊戲的線上玩家，一起完整體驗與探索泰瑞亞大陸上的一切。')?></p>
     <p><?php echo CHtml::encode("我們知道只靠個人力量是很難完成許多事情的，尤其 Guild Wars 2 (GW2) 是一款純英線上遊戲，"
