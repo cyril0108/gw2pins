@@ -7,9 +7,11 @@ Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
+        'timeZone'=>'Asia/Taipei',
         'theme'=>'bootstrap', // requires you to copy the theme under your themes directory
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'GW2 PiNs',
+        'language'=>'zh_tw',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
